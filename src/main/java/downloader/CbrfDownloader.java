@@ -19,5 +19,13 @@ public class CbrfDownloader {
         String[] table = gg.first().text().split(" ");
         String currency = table[table.length-1];
         return currency;
+        /*
+        return Jsoup
+                .parse(url,10000)
+                .select(cssSelector)
+                .first()
+                .text()
+                .split(" ")
+                */
     }
 }
