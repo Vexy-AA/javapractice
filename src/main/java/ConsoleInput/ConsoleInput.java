@@ -13,6 +13,8 @@ import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 import org.apache.http.client.utils.URIBuilder;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -21,7 +23,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class ConsoleInput {
-    public static void main(String[] args) throws ParseException, URISyntaxException, IOException {
+
+    @Deprecated
+    public static void mainOld(String[] args) throws ParseException, URISyntaxException, IOException {
         Scanner sc = new Scanner(System.in);
         int repeat = 0;
         do {
