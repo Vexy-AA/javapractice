@@ -38,29 +38,27 @@ public class ConsoleInput {
             String stringDate = sc.next();
             // System.out.println("вы ввели "+ stringDate);
 
-            SimpleDateFormat format = new SimpleDateFormat();
-            format.applyPattern("dd.MM.yyyy");
-            GregorianCalendar date = new GregorianCalendar();
-            date.setTime(format.parse(stringDate));
+
 
             DateHandler dateHandler = new DateHandler();
             CurrencyHAndler currencyHAndler = new CurrencyHAndler();
             CbrfDownloader downloader = new CbrfDownloader();
-
+//https://www.cbr.ru/currency_base/daily/?UniDbQuery.Posted=True&UniDbQuery.To=04.04.2020
     //https://www.cbr.ru/currency_base/daily/?date_req=02.01.2020
-            URL url = new URIBuilder()
+            /*URL url = new URIBuilder()
                     .setScheme("https")
                     .setHost("www.cbr.ru")
                     // .setPort(8080)
                     .setPath("/currency_base/daily/")
-                    .addParameter("date_req", dateHandler.getDate(date))
+                    .addParameter("UniDbQuery.Posted", "True")
+                    .addParameter("UniDbQuery.To", dateHandler.getDate(stringDate))
                     .build()
                     .toURL();
             System.out.println(url);
 
             String actual = downloader.get(url, currencyHAndler.getCss(currency));
             DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
-            System.out.println("Курс " + currency + " на " + dateFormat.format(date.getTime()) + " " + actual);
+            System.out.println("Курс " + currency + " на " + dateHandler.getDate(stringDate) + " " + actual);*/
             System.out.println("Еще разок? 1- да");
             repeat = sc.nextInt();
         } while (repeat == 1);
